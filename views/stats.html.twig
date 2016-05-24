@@ -1,0 +1,61 @@
+{% extends "recherche.html.twig" %}
+
+{% block resultats %}
+
+	<div class="type-resultat">
+
+		<center><h3>Collaborateurs</h3></center>
+		<br>
+
+
+
+		<table class="table">
+			<tr>
+				<th>Login</th>
+				<th>Impact</th>
+			</tr>
+			
+			
+			{% for collab in listeCollab %}
+				<tr>
+					<td> {{ collab["login"] }} </td>
+					<td> {{ collab["nb"] }} %</td>
+				</tr>
+			{% endfor %}
+			
+			
+		</table>
+
+	</div>
+
+	<div class="type-resultat">
+		<center><h3>100 derniers commits</h3></center>
+
+		<br>
+
+		<table class="table">
+			<tr>
+				<th>Committer</th>
+				<th>Message</th>
+				<th>Date</th>
+			</tr>
+			{% for commit in listeCommits %}
+			<tr>
+				<td>
+				{% if commit["committer"]["login"] is defined %}
+					{{ commit["committer"]["login"] }}
+				{% endif %}
+				</td>
+				<td>
+					{{ commit["commit"]["message"] }}
+				</td>
+				<td>
+					{{ commit["commit"]["committer"]["date"] }}
+				</td>
+			</tr>
+			{% endfor %}
+			
+		</table>
+	</div>
+
+{% endblock %}

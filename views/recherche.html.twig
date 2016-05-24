@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block page %}
+
+	<header>
+		<center>
+			<h1>GitStats</h1>
+			<h3>Statistiques GitHub</h3>
+		</center>
+	</header>
+
+	<div>
+		<block id="zone-recherche">
+			<div id="zone-barre-recherche">
+				<form action="{{ url('rechercherRepos') }}" method="GET" >
+					<input id="champ-recherche" name="motsClefs" type="text" />
+					<input type="submit" id="recherche" value="" />
+				</form>		
+			</div>
+
+			<div id="liste-repos">
+				{% if app.session.get('listeRepos') is defined and not (app.session.get('listeRepos') is null) %}
+						<ul>
+						{% for repo in app.session.get('listeRepos').items %}
+							<a href="{{ path('statsRepo', {'fullname' : repo["full_name"]}) }}">
+								<li class="repository">{{ repo["name"] }} {{repo["owner"]["login"]}} {{ repo["created_at"] }} {{ repo["language"] }}</li>
+							</a>
+						{% endfor %}
+						</ul>
+				{% endif %}
+			</div>
+		</block>
+
+		<block id="resultats">
+			{% block resultats %}
+				Statistiques.
+
+			{% endblock %}
+		</block>
+	</div>
+
+{% endblock %}

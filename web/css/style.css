@@ -1,0 +1,112 @@
+
+#zone-barre-recherche {
+	
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	padding: 0px;
+	height: 35px;
+	width: 90%;
+
+	vertical-align: middle;
+}
+
+header {
+	width: 100%;
+	background-color: #89581c;
+	margin: 0px;
+	height: 100px;
+}
+
+h1, h2, h3 {
+	margin: 0px;
+}
+
+li {
+	list-style: none;
+	padding-right: auto;
+	padding-left: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 0px;
+}
+
+ul {
+	margin-left: 0px;
+	padding: 0px;
+}
+
+#liste-repos {
+	border: solid 2px blue;
+	height: 600px;
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: auto;
+}
+
+#loupe {
+	margin: 5px;
+	padding: 0px;
+	height: 25px;
+	/*width: 25px;*/
+}
+
+#resultats {
+	display: inline-block;
+	width: 85%;
+	margin: 0px;
+	margin-right: -0.25em;
+	min-height: 730px;
+}
+
+#zone-recherche {
+	display: inline-block;
+	background-color: #89581c;
+	margin: 0;
+	padding: 0;
+	min-height: 730px;
+	width: 15%;
+	margin-right: -0.25em;
+	margin-bottom: 0px;
+	vertical-align: top;
+	/*margin-top: -1em;*/
+}
+
+#champ-recherche {
+	margin: 0;
+	padding: 0;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	width: 80%;
+}
+
+#recherche {
+	margin: 5px;
+	padding: 0px;
+	height: 30px;
+	width: 30px;
+	background-image: url("../../web/img/loupe_pixabay.png");
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	border: none;
+}
+
+.repository {
+	/*border-top: solid 1px blue;*/
+	border-bottom: solid 1px blue;
+	background-color: #40d6d6;
+}
+
+.type-resultat {
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px;
+	padding: 5px;
+	height: 700px;
+	width: 47%;
+	background-color: #40d6d6;
+	overflow: auto;
+}
