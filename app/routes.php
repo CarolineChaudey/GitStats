@@ -20,7 +20,7 @@
 		$recherche = implode("+", $listeMots);
 
 		$id_session = curl_init();
-		$requete = 'https://api.github.com/search/repositories?q='.$recherche.'&per_page=100';
+		$requete = 'https://api.github.com/search/repositories?q='.$recherche.'&per_page=100&client_id='.$_ENV['id'].'&client_secret='.$_ENV['secret'];
 		curl_setopt($id_session, CURLOPT_URL, $requete);
 		curl_setopt($id_session, CURLOPT_USERAGENT, 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0');
 		curl_setopt($id_session, CURLOPT_RETURNTRANSFER, true);
@@ -39,7 +39,7 @@
 
 		// recherche des 100 derniers commits
 		$id_session = curl_init();
-		$requete = 'https://api.github.com/repos/'.$fullname.'/commits?&per_page=100';
+		$requete = 'https://api.github.com/repos/'.$fullname.'/commits?&per_page=100&client_id='.$_ENV['id'].'&client_secret='.$_ENV['secret'];
 		curl_setopt($id_session, CURLOPT_URL, $requete);
 		curl_setopt($id_session, CURLOPT_USERAGENT, 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0');
 		curl_setopt($id_session, CURLOPT_RETURNTRANSFER, true);
